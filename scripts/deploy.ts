@@ -27,7 +27,6 @@ async function main() {
   const duration = 30 * 24 * 60 * 60; // 30 days in seconds
   const developer = "0x429cB52eC6a7Fc28bC88431909Ae469977F6daCF"; // Developer's address
   const salt = hre.ethers.id("unique-salt"); // Unique salt for create2
-  console.log(salt)
 
   console.log("Creating a new PiggyBank...");
   const tx = await factory.createPiggyBank(
