@@ -1,7 +1,5 @@
-# Sample Hardhat Project
-
-## Deployed Contracts
-# Sepolia Testnet
+# Deployed Contracts
+## Sepolia Testnet
  - PiggyBankFactory: [0x0bfb0ae89217ff82f9c3bae7eb9fffd65d569587](https://sepolia.etherscan.io/address/0x0bfb0ae89217ff82f9c3bae7eb9fffd65d569587)
 
 - Mock USDT: [0x344eadfa13793bceb3a4a561dda1468af098500b](https://sepolia.etherscan.io/address/0x344eadfa13793bceb3a4a561dda1468af098500b)
