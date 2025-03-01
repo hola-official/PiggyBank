@@ -8,12 +8,13 @@ const config: HardhatUserConfig = {
       url:
         "https://eth-sepolia.g.alchemy.com/v2/" + vars.get("ALCHEMY_API_KEY"),
       accounts: [vars.get("PRIVATE_KEY") || ""],
+      gas: 5000000,
     },
   },
   etherscan: {
     apiKey: {
-      baseSepolia: vars.get("ETHERSCAN_API_KEY"),
-    }
+       sepolia: vars.get("ETHERSCAN_API_KEY"),
+    },
   },
 };
 

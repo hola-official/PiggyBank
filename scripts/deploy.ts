@@ -25,23 +25,28 @@ async function main() {
   // Optional: Deploy a PiggyBank contract through the factory
   const purpose = "Vacation Fund";
   const duration = 30 * 24 * 60 * 60; // 30 days in seconds
-  const developer = "0xDeveloperAddress"; // Replace with the developer's address
+  const developer = "0x429cB52eC6a7Fc28bC88431909Ae469977F6daCF"; // Developer's address
   const salt = hre.ethers.id("unique-salt"); // Unique salt for create2
+  console.log(salt)
 
   console.log("Creating a new PiggyBank...");
   const tx = await factory.createPiggyBank(
     purpose,
     duration,
-    usdt.address, // Mock USDT address
-    usdc.address, // Mock USDC address
-    dai.address, // Mock DAI address
+    usdt.target, // Mock USDT address
+    usdc.target, // Mock USDC address
+    dai.target, // Mock DAI address
     developer,
     salt
   );
- tx.wait()
+  const receipt = await tx.wait();
+  console.log(receipt.events);
+  const piggyBankAddress = receipt.events?.find(
+    (e) => e.event === "PiggyBankCreated"
+  )?.args?.piggyBank;
+  console.log("PiggyBank deployed to:", piggyBankAddress);
 }
 
-// Run the deployment script
 main()
   .then(() => process.exit(0))
   .catch((error) => {
